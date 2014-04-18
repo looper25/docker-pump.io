@@ -16,4 +16,4 @@ docker builder .
 
 6)run docker
 
- docker run -p 22 -p 80:80 -t -v database:/data/db:rw  -v uploads:/var/local/pump.io/uploads:rw <Image Id>
+ docker run -d -p 80:80  <Image Id>
