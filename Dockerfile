@@ -15,13 +15,9 @@ RUN     apt-get -y update
 # Install dependencies
 ENV     DEBIAN_FRONTEND noninteractive
 
-RUN     apt-get install -y software-properties-common
-RUN     apt-get -y install software-properties-common wget sudo net-tools
+RUN     apt-get -y install software-properties-common wget sudo net-tools graphicsmagick nano
 
 # Install  ssh server
-RUN      apt-get install -y openssh-server
-RUN      mkdir -p /var/run/sshd
-
 RUN     add-apt-repository ppa:chris-lea/node.js
 RUN     apt-get update
 RUN     apt-get -y install nodejs python make g++ mongodb-10gen python-pip git
@@ -34,6 +30,6 @@ ADD     Supervisorfile/ /pumpio/
 ADD     pump.io.json/ /etc/
 RUN     echo "[include]\nfiles = /pumpio/Supervisorfile\n" >> /etc/supervisord.conf
 RUN     mkdir -p /data/db
-
-EXPOSE  22 80
+RUN     apt-get clean
+EXPOSE  80
 CMD ["/usr/local/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"] 
