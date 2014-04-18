@@ -1,6 +1,6 @@
 ######################
 
-### pump.io http://pump.io Docker image - listens in port 80, 22
+### pump.io http://pump.io Docker image - listens in port 80
 
 1) Install docker
 
