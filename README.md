@@ -4,7 +4,7 @@
 
 1) Install docker
 
-2) clone  https://github.com/niktrix/docker-pump.io
+2) clone  https://github.com/looper25/docker-pump.io
 
 3) go inside folder pump.io
 
